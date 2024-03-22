@@ -1,0 +1,126 @@
+
+body {
+  background:linear-gradient(360deg,#00080E 12.38%,#0A1627 111.39%);
+  padding-bottom:4.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 170px;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content:left;
+  align-items: left;
+  justify-content: left;
+  padding: 0;
+  margin: 0;
+}
+
+.header img {
+  height: 100%;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-container h1 {
+  font-family:'Chakra Petch',sans-serif;
+  font-weight:600;
+  font-size:4rem;
+  text-align:center;  
+  color:#D0D4DE;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.float {
+  overflow: hidden;
+  -webkit-transform: translatey(0);
+  transform: translatey(0);
+  -webkit-animation: float 4s ease-in-out infinite;
+  animation: opacity 2s linear forwards, float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{
+      -webkit-transform:translatey(0);
+      transform:translatey(0)
+  }
+  50%{
+      -webkit-transform:translatey(-20px);
+      transform:translatey(-20px)
+  }
+  100%{
+      -webkit-transform:translatey(0);
+      transform:translatey(0)
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap:  30px;
+  justify-content: center;
+}
+
+.challenge__container {
+  display:block;
+  justify-content: center;
+  align-items:normal;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.input-box,
+.output-box {
+  background-color: black;
+  width: 400px;
+  height: 300px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  align-items: center;
+}
+
+textarea {
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 2px;
+  font-size: 18px;
+} 
+
+textarea::placeholder { /* Aqui seleciono o texto do placeholder dentro do elemento <textarea>, */
+  color: #999;        /* e adiciono o estilo desejado */
+  font-style: italic;
+  text-align: left;
+}
+
+.button-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}

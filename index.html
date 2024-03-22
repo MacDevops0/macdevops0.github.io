@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Chakra+Petch:wght@400;500;600;700&amp;family=Michroma&amp;display=swap" rel="stylesheet">
+    <title>Decodificador de Texto</title>
+    <link rel="stylesheet" href="./styles/style.css">
+  </head>
+
+  <body>
+
+    <div class="challenge__container">
+      <div class="header">
+        <img src="./assets/img/alura-challenges-icon.svg" alt="Logo da Alura">
+      </div>
+      <div class="title-container">
+        <h1>Decodificador de Texto</h1>
+      </div>
+      <div class="challenge__icon--animation --spacing-index">
+        <img src="./assets/img/animation-challenge-alura-icon.svg" class="float" alt="Logo da Alura">
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="input-box">
+        <textarea id="input-text" placeholder="Digite ou cole aqui o texto que você quer codificar e aperte o botão 'Codificar'..."></textarea>
+      </div>
+      <div class="button-box">
+        <button id="code-btn">Codificar</button>
+      </div>
+      <div class="output-box">
+        <textarea id="output-text" placeholder="O texto codificado aparecerá aqui..." readonly></textarea>
+      </div>
+    </div>
+
+    <script src="./scripts/encode.js"></script>
+
+  </body>
+</html>
