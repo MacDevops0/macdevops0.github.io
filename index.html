@@ -15,31 +15,45 @@
 
   <body>
 
-    <div class="challenge__container">
-      <div class="header">
-        <img src="./assets/img/alura-challenges-icon.svg" alt="Logo da Alura">
-      </div>
-      <div class="title-container">
-        <h1>Decodificador de Texto</h1>
-      </div>
-      <div class="challenge__icon--animation --spacing-index">
-        <img src="./assets/img/animation-challenge-alura-icon.svg" class="float" alt="Logo da Alura">
-      </div>
-    </div>
+    <header class="challenge__header">
+      <img src="./assets/img/alura-challenges-icon.svg" alt="Logo da Alura">
+      <nav class="challenge__header___menu">
+        <a class="challenge__header___menulink" href="home.html">Home</a>
+      </nav>
+    </header>
 
-    <div class="content">
-      <div class="input-box">
-        <textarea id="input-text" placeholder="Digite ou cole aqui o texto que você quer codificar e aperte o botão 'Codificar'..."></textarea>
-      </div>
-      <div class="button-box">
-        <button id="code-btn">Codificar</button>
-      </div>
-      <div class="output-box">
-        <textarea id="output-text" placeholder="O texto codificado aparecerá aqui..." readonly></textarea>
-      </div>
-    </div>
+    <main class="challenge__content">
 
-    <script src="./scripts/encode.js"></script>
+      <div class="challenge__aluralogo___animation">
+        <img src="./assets/img/animation-challenge-alura-icon.svg" class="iconfloat" alt="Logo da Alura">
+      </div>
+      
+      <div class="challenge__content___title">
+        <h1>Desafio Alura: <p>Descodificador de Texto</p></h1>
+      </div>
+      
+      <div class="challenge__content___boxes">
+      
+        <div class="input-box">
+          <textarea id="input-text" placeholder="Digite ou cole aqui o texto que você quer codificar e aperte o botão 'Codificar'..."></textarea>
+        </div>
+        <div class="button-box">
+          <button id="code-btn">Codificar</button>
+        </div>
+        <div class="output-box">
+          <textarea id="output-text" placeholder="O texto codificado aparecerá aqui..." readonly></textarea>
+        </div>
+
+      </div>>
+
+      <script src="./scripts/encode.js"></script>
+
+    </main>
+
+    <footer class="index__footer">
+      <p>Desenvolvido por Cláudio Santos.</p>
+    </footer>
 
   </body>
+
 </html>

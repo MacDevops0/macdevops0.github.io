@@ -38,4 +38,5 @@ Com essas alterações, o comportamento do aplicativo é o seguinte:
 
 Dessa forma, o campo de entrada sempre exibe o texto original ou descodificado, e o campo de saída é usado apenas para exibir o texto codificado temporariamente.
 
-(fim)
+O path para stylesheet utilizado nesse projeto: ./scripts/node_modules/animate.css/animate.css
+O path para stylesheet alternativo: https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css
