@@ -40,3 +40,105 @@ Dessa forma, o campo de entrada sempre exibe o texto original ou descodificado, 
 
 O path para stylesheet utilizado nesse projeto: ./scripts/node_modules/animate.css/animate.css
 O path para stylesheet alternativo: https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css
+
+*******************************************************************************************************************
+03:30h 24/3/2024 ENCODE.JS
+
+Aqui está uma explicação detalhada do código:
+
+Obtenção dos elementos HTML:
+inputText é o campo de entrada de texto onde o usuário insere o texto a ser codificado/decodificado.
+outputText é o campo de saída onde o texto codificado/decodificado é exibido.
+codeBtn é o botão para codificar/decodificar o texto.
+decodeBtn é o botão que você mencionou para descriptografar (decodificar) o texto.
+Variável de estado:
+isEncoded é uma variável booleana que mantém o estado de codificação do texto. Se true, o texto está codificado; se false, o texto está decodificado.
+Manipulação do botão de codificação/decodificação:
+Um evento de clique é adicionado ao botão codeBtn.
+Quando o botão é clicado, a função de manipulação verifica o estado atual de isEncoded.
+Se isEncoded for true, o texto no campo outputText é decodificado usando a função decodeText e exibido no campo inputText. O campo outputText é limpo, o texto do botão é alterado para "Codificar", e isEncoded é definido como false.
+Se isEncoded for false, o texto no campo inputText é codificado usando a função encodeText e exibido no campo outputText. O campo inputText é limpo, o texto do botão é alterado para "Descodificar", e isEncoded é definido como true.
+Funções de codificação e decodificação:
+A função encodeText codifica o texto fornecido usando uma cifra de deslocamento com um deslocamento de 3 posições. Ela percorre cada caractere do texto e, se for uma letra (maiúscula ou minúscula), desloca o caractere 3 posições no alfabeto.
+A função decodeText decodifica o texto fornecido usando uma cifra de deslocamento com um deslocamento de 3 posições. Ela percorre cada caractere do texto e, se for uma letra (maiúscula ou minúscula), desloca o caractere 3 posições no sentido oposto no alfabeto.
+
+*******************************************************************************************************************
+04:00h 24/3/2024
+No evento de clique do botão "Codificar" (codeBtn), obtém-se o valor do campo de entrada (inputText.value). Se o valor não for vazio, o texto é codificado usando a função encodeText, e o resultado é exibido no campo de saída (outputText.value). Em seguida, o campo de entrada é limpo (inputText.value = '').
+No evento de clique do botão "Descodificar" (decodeBtn), obtém-se o valor do campo de saída (outputText.value). Se o valor não for vazio, o texto é decodificado usando a função decodeText, e o resultado é exibido no mesmo campo de saída (outputText.value). Em seguida, o campo de entrada é limpo (inputText.value = '').
+
+*******************************************************************************************************************
+04:59h 24/3/2024
+Aqui estão as alterações feitas:
+
+Adicionei uma variável encryptedText para armazenar o texto criptografado.
+No evento de clique do botão "Codificar" (codeBtn):
+Removi os espaços em branco extras do início e fim do texto usando inputText.value.trim().
+Verifiquei se o texto não está vazio e se é diferente do texto criptografado armazenado em encryptedText. Isso evita que o mesmo texto seja criptografado novamente.
+Após criptografar o texto, armazenei o texto criptografado em encryptedText e limpei o campo de entrada (inputText.value = '').
+Adicionei outputText.style.overflowY = 'hidden'; para ocultar a barra de rolagem vertical no campo de saída.
+No evento de clique do botão "Descodificar" (decodeBtn):
+Removi os espaços em branco extras do início e fim do texto usando outputText.value.trim().
+Verifiquei se o texto não está vazio.
+Decodifiquei o texto usando a função decodeText e exibi o resultado no campo de entrada (inputText.value).
+Limpei o campo de saída (outputText.value = '').
+Resetei a variável encryptedText para uma string vazia.
+Adicionei outputText.style.overflowY = 'auto'; para restaurar a barra de rolagem vertical no campo de saída quando necessário.
+Com essas alterações, o comportamento do aplicativo será:
+
+Ao clicar em "Codificar", o texto no campo de entrada será criptografado e exibido no campo de saída, sem barra de rolagem vertical. O campo de entrada será limpo.
+Se o mesmo texto for criptografado novamente, nada acontecerá.
+Ao clicar em "Descodificar", o texto criptografado no campo de saída será decodificado e exibido no campo de entrada. O campo de saída será limpo e a barra de rolagem vertical será restaurada, se necessário.
+
+*******************************************************************************************************************
+05:12h 24/3/2024
+
+Após criptografar o texto , nao é permitido que nenhum outro texto seja digitado ou colado no campo de entrada até que o botao de descriptografar seja apertado ou clicado pelo usuario.
+
+Aqui estão as alterações feitas:
+
+Adicionei uma variável isEncrypted para rastrear se o texto está criptografado ou não.
+No evento de clique do botão "Codificar" (codeBtn):
+Após criptografar o texto e exibi-lo no campo de saída, adicionei a linha inputText.disabled = true; para desabilitar o campo de entrada.
+Defini isEncrypted como true para indicar que o texto está criptografado.
+No evento de clique do botão "Descodificar" (decodeBtn):
+Após decodificar o texto e exibi-lo no campo de entrada, adicionei a linha inputText.disabled = false; para habilitar o campo de entrada novamente.
+Defini isEncrypted como false para indicar que o texto não está mais criptografado.
+Com essas alterações, o comportamento do aplicativo será:
+
+Ao clicar em "Codificar", o texto no campo de entrada será criptografado e exibido no campo de saída. O campo de entrada será limpo e desabilitado, impedindo que o usuário digite ou cole qualquer texto nele.
+Quando o campo de entrada estiver desabilitado, o usuário ainda poderá selecionar e copiar o texto no campo de saída.
+Ao clicar em "Descodificar", o texto criptografado no campo de saída será decodificado e exibido no campo de entrada. O campo de saída será limpo, e o campo de entrada será habilitado novamente, permitindo que o usuário digite ou cole um novo texto.
+
+*******************************************************************************************************************
+06:12h 24/3/2024
+
+Enquanto texto criptografado está no campo de saída de texto, e o campo de entrada desabilitado, quero que apareça no campo de entrada de texto a mensagem de placeholder: "Agora toque na tela ou clique com mouse no botão 'Descodificar' para o texto voltar ao original."
+
+Aqui estão as alterações feitas:
+
+No evento de clique do botão "Codificar" (codeBtn), após desabilitar o campo de entrada (inputText.disabled = true;), adicionei a linha:
+
+inputText.placeholder = "Agora toque na tela ou clique com mouse no botão 'Descodificar' para o texto voltar ao original.";
+(Essa linha define o texto de placeholder do campo de entrada para a mensagem desejada.)
+
+No evento de clique do botão "Descodificar" (decodeBtn), após habilitar o campo de entrada (inputText.disabled = false;), adicionei a linha:
+
+inputText.placeholder = 'Digite ou cole aqui o texto a ser codificado';
+(Essa linha restaura o texto de placeholder padrão do campo de entrada.)
+
+Com essas alterações, o comportamento do aplicativo será:
+
+Ao clicar em "Codificar", o texto no campo de entrada será criptografado e exibido no campo de saída. O campo de entrada será limpo, desabilitado e exibirá a mensagem de placeholder: "Agora toque na tela ou clique com mouse no botão 'Descodificar' para o texto voltar ao original.".
+Quando o campo de entrada estiver desabilitado, o usuário ainda poderá selecionar e copiar o texto no campo de saída.
+Ao clicar em "Descodificar", o texto criptografado no campo de saída será decodificado e exibido no campo de entrada. O campo de saída será limpo, e o campo de entrada será habilitado novamente, exibindo o placeholder padrão: "Digite ou cole aqui o texto a ser codificado".
+
+*******************************************************************************************************************
+
+
+
+
+
+
+
+

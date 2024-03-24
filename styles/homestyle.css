@@ -20,15 +20,14 @@ body{
     box-sizing: border-box;
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
-}
-
-.cabecalho{
-    padding: 2% 0% 0% 15%;
+    margin: 0;
+    padding: 0;
 }
 
 .cabecalho__menu{
     display: flex;
-    gap: 100px;
+    justify-content: space-between;
+    padding: 32px 32px;
 }
 
 .cabecalho__menu__link{
@@ -41,7 +40,7 @@ body{
 }
 
 .apresentacao{
-    padding: 4% 15% 0 15%;
+    padding: 32px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -85,15 +84,13 @@ body{
     animation: bounce;
     animation-delay: 3s;
     animation-duration: 3s;
-    /*animation-timing-function: linear;*/
 }
 
 .apresentacao__links__navegacao{
-    display: flex;
-    justify-content: center;
+    display: block;
     gap: 16px;
     border: 2px solid var(--cor-terciaria);
-    width: 25%;
+    width: 8em;
     text-align: center;
     border-radius: 8px;
     font-size: 1.5rem;
@@ -123,19 +120,24 @@ body{
 .rodape{
     color: var(--cor-primaria);
     background-color: var(--cor-terciaria);
-    padding: 24px;
+    padding: 0px;
     text-align: center;
     font-family: var(--fonte-secundaria);
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 400;
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 768px){
     .cabecalho{
-         padding: 10%;  
+         padding: 1em 1em;
     }
     .cabecalho__menu{
-        justify-content: center;
+        padding: 10px 0px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .cabecalho__menu__link {
+        font-size: 3.5vw;
     }
     .apresentacao{
         flex-direction: column-reverse;
@@ -143,5 +145,17 @@ body{
     }
     .apresentacao__conteudo{
         width: auto;
+    }
+    .apresentacao__links{
+        padding: 1.5em 1.5em;
+    }
+    .apresentacao__links__navegacao {
+        display: flex;
+        width: 8em;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    
     }
 }

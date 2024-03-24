@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
-
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Chakra+Petch:wght@400;500;600;700&amp;family=Michroma&amp;display=swap" rel="stylesheet">
-    <title>Decodificador de Texto</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <title>Descodificador de Texto</title>
   </head>
 
   <body>
@@ -19,7 +17,11 @@
       <img src="./assets/img/alura-challenges-icon.svg" alt="Logo da Alura">
       <nav class="challenge__header___menu">
         <a class="challenge__header___menulink" href="home.html">Home</a>
+        <a class="challenge__header___menulink" href="https://www.alura.com.br/challenges">Alura Challenges</a>
       </nav>
+      <div class="challenge__content___title">
+        <h1>Descodificador de Texto</h1>
+      </div>
     </header>
 
     <main class="challenge__content">
@@ -28,22 +30,17 @@
         <img src="./assets/img/animation-challenge-alura-icon.svg" class="iconfloat" alt="Logo da Alura">
       </div>
       
-      <div class="challenge__content___title">
-        <h1>Desafio Alura: <p>Descodificador de Texto</p></h1>
-      </div>
-      
-      <div class="challenge__content___boxes">
-      
+      <div class="challenge__content___boxes">     
         <div class="input-box">
-          <textarea id="input-text" placeholder="Digite ou cole aqui o texto que você quer codificar e aperte o botão 'Codificar'..."></textarea>
+          <textarea id="input-text" placeholder="Digite ou cole aqui o texto e escolha o botão 'Codificar' ou 'Descodificar'..."></textarea>
         </div>
         <div class="button-box">
           <button id="code-btn">Codificar</button>
+          <button id="decode-btn">Descodificar</button>
         </div>
         <div class="output-box">
-          <textarea id="output-text" placeholder="O texto codificado aparecerá aqui..." readonly></textarea>
+          <textarea id="output-text" placeholder="...que o texto codificado aparecerá aqui."readonly></textarea>
         </div>
-
       </div>>
 
       <script src="./scripts/encode.js"></script>
@@ -51,7 +48,7 @@
     </main>
 
     <footer class="index__footer">
-      <p>Desenvolvido por Cláudio Santos.</p>
+      <p>Desenvolvido por Cláudio Santos</p>
     </footer>
 
   </body>
